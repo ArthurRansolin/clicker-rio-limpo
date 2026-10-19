@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://wivwvralbd3p"]
 
+[ext_resource type="Script" uid="uid://bhlb2dflwsv5g" path="res://Scripts/shop.gd" id="1_a0mxf"]
+
 [node name="Shop" type="Node2D" unique_id=238073595]
+script = ExtResource("1_a0mxf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1790578921]
 offset_left = 94.0
@@ -23,3 +26,9 @@ text = "ClickUpgrade"
 [node name="AutoClickUpgrade" type="Button" parent="VBoxContainer" unique_id=2084166029]
 layout_mode = 2
 text = "+1 Moeda/s — 50 moedas"
+
+[node name="MultiplierUpgrade" type="Button" parent="VBoxContainer" unique_id=267539033]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1872382138]
+layout_mode = 2
