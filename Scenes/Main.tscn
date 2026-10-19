@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://bhtcj5wwx6j7c"]
+
+[ext_resource type="Script" uid="uid://br2mkiir6mgwi" path="res://Scripts/main.gd" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://dqqfwt4v1v845" path="res://assets/cenarios/svgviewer-output.svg" id="2_grg3l"]
+[ext_resource type="Texture2D" uid="uid://ceareiqyvhcya" path="res://assets/lixo/caixa_papelao.svg" id="3_grg3l"]
+[ext_resource type="Texture2D" uid="uid://ks5ikrd5qmur" path="res://assets/lixo/garrafa_plastica.svg" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://bynedu5penr4p" path="res://Scripts/trash.gd" id="4_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://ut161md5ywmn" path="res://assets/lixo/casca_banana.svg" id="4_frkhe"]
+[ext_resource type="Texture2D" uid="uid://c8susqbpowmr" path="res://assets/lixo/engrenagem.svg" id="5_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://bml0jl7v260ai" path="res://assets/lixo/garrafa_vidro.svg" id="7_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://fd08t8iwa7sg" path="res://assets/lixo/lata.svg" id="8_erwvk"]
+[ext_resource type="Texture2D" uid="uid://jrn0gulyb2re" path="res://assets/lixo/papel_amassado.svg" id="9_2w5on"]
+[ext_resource type="Texture2D" uid="uid://x6bdvesyvgml" path="res://assets/lixo/pedra.svg" id="10_346fj"]
+[ext_resource type="Texture2D" uid="uid://cv4rr00ejw42s" path="res://assets/lixo/pneu.svg" id="11_0sclb"]
+[ext_resource type="Texture2D" uid="uid://mpnlfnhi254j" path="res://assets/lixo/saco_lixo.svg" id="12_sxkr1"]
+
+[node name="Main" type="Control" unique_id=541274630]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 355.0
+offset_top = 21.0
+offset_right = -293.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r150o")
+
+[node name="CoinLabel" type="Label" parent="." unique_id=1106885199]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 19.0
+offset_right = 287.0
+offset_bottom = 68.0
+text = "Moedas: 0
+"
+
+[node name="ClickButton" type="Button" parent="." unique_id=49862313]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 134.0
+offset_right = 296.0
+offset_bottom = 181.0
+text = "CLIQUE!"
+
+[node name="ClickPowerLabel" type="Label" parent="." unique_id=2134337583]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 248.0
+offset_right = 316.0
+offset_bottom = 271.0
+text = "Poder por clique: 1"
+
+[node name="AutoClickTimer" type="Timer" parent="." unique_id=567343332]
+
+[node name="Backgound" type="TextureRect" parent="." unique_id=939311397]
+layout_mode = 0
+offset_left = -347.0
+offset_top = -10.0
+offset_right = 1570.0
+offset_bottom = 1073.0
+texture = ExtResource("2_grg3l")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="papelao" type="TextureButton" parent="." unique_id=1425430142]
+layout_mode = 0
+offset_left = -245.0
+offset_top = 741.0
+offset_right = -117.0
+offset_bottom = 869.0
+texture_normal = ExtResource("3_grg3l")
+script = ExtResource("4_1p5hy")
+
+[node name="banana" type="TextureButton" parent="." unique_id=16750130]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 765.0
+offset_right = 38.0
+offset_bottom = 893.0
+texture_normal = ExtResource("4_frkhe")
+script = ExtResource("4_1p5hy")
+
+[node name="engrenagem" type="TextureButton" parent="." unique_id=512270686]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 795.0
+offset_right = 268.0
+offset_bottom = 923.0
+texture_normal = ExtResource("5_1p5hy")
+script = ExtResource("4_1p5hy")
+
+[node name="garrafa" type="TextureButton" parent="." unique_id=1326005385]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 785.0
+offset_right = 472.0
+offset_bottom = 913.0
+texture_normal = ExtResource("3_kln2b")
+script = ExtResource("4_1p5hy")
+
+[node name="vidro" type="TextureButton" parent="." unique_id=1223489283]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 834.0
+offset_right = 664.0
+offset_bottom = 962.0
+texture_normal = ExtResource("7_h1m7h")
+script = ExtResource("4_1p5hy")
+
+[node name="copo" type="TextureButton" parent="." unique_id=740481950]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 802.0
+offset_right = 848.0
+offset_bottom = 930.0
+texture_normal = ExtResource("8_erwvk")
+script = ExtResource("4_1p5hy")
+
+[node name="papel" type="TextureButton" parent="." unique_id=191065773]
+layout_mode = 0
+offset_left = 939.0
+offset_top = 821.0
+offset_right = 1067.0
+offset_bottom = 949.0
+texture_normal = ExtResource("9_2w5on")
+script = ExtResource("4_1p5hy")
+
+[node name="pedra" type="TextureButton" parent="." unique_id=640392698]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 799.0
+offset_right = 1264.0
+offset_bottom = 927.0
+texture_normal = ExtResource("10_346fj")
+script = ExtResource("4_1p5hy")
+
+[node name="pneu" type="TextureButton" parent="." unique_id=2011209021]
+layout_mode = 0
+offset_left = 1275.0
+offset_top = 799.0
+offset_right = 1403.0
+offset_bottom = 927.0
+texture_normal = ExtResource("11_0sclb")
+script = ExtResource("4_1p5hy")
+
+[node name="saco" type="TextureButton" parent="." unique_id=2119838858]
+layout_mode = 0
+offset_left = 1389.0
+offset_top = 760.0
+offset_right = 1517.0
+offset_bottom = 888.0
+texture_normal = ExtResource("12_sxkr1")
+script = ExtResource("4_1p5hy")
+
+[connection signal="pressed" from="ClickButton" to="." method="_on_click_button_pressed"]
+[connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]

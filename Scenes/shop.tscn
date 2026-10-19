@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://wivwvralbd3p"]
+
+[node name="Shop" type="Node2D" unique_id=238073595]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1790578921]
+offset_left = 94.0
+offset_top = 71.0
+offset_right = 519.0
+offset_bottom = 366.0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=799613006]
+layout_mode = 2
+text = "LOJA"
+
+[node name="CoinLabel" type="Label" parent="VBoxContainer" unique_id=954095281]
+layout_mode = 2
+text = "Moedas: 0"
+
+[node name="ClickUpgrade" type="Button" parent="VBoxContainer" unique_id=1113503556]
+layout_mode = 2
+text = "ClickUpgrade"
+
+[node name="AutoClickUpgrade" type="Button" parent="VBoxContainer" unique_id=2084166029]
+layout_mode = 2
+text = "+1 Moeda/s — 50 moedas"

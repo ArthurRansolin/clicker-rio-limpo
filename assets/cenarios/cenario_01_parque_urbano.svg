@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#65C9F4"/><stop offset="1" stop-color="#DDF6FF"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<circle cx="1610" cy="180" r="80" fill="#FFD35A"/>
+<g fill="#71818B" stroke="#32434C" stroke-width="8">
+ <rect x="120" y="390" width="170" height="340"/><rect x="305" y="320" width="210" height="410"/>
+ <rect x="530" y="430" width="140" height="300"/><rect x="1390" y="360" width="170" height="370"/>
+ <rect x="1580" y="300" width="220" height="430"/>
+</g>
+<g fill="#BFD3DB">
+ <rect x="155" y="430" width="30" height="35"/><rect x="215" y="430" width="30" height="35"/>
+ <rect x="350" y="370" width="35" height="40"/><rect x="420" y="370" width="35" height="40"/>
+ <rect x="1630" y="350" width="40" height="45"/><rect x="1710" y="350" width="40" height="45"/>
+</g>
+<path d="M0 720 Q360 650 720 720 T1440 700 T1920 720 V1080 H0Z" fill="#68B84A" stroke="#173D43" stroke-width="8"/>
+
+<g stroke="#214C37" stroke-width="8">
+ <path d="M240 760v-180" /><circle cx="240" cy="550" r="90" fill="#4EA848"/>
+ <path d="M1680 760v-180"/><circle cx="1680" cy="550" r="90" fill="#5DB94F"/>
+</g>
+<path d="M0 850 Q450 790 900 860 T1920 840" fill="none" stroke="#B99A72" stroke-width="120"/>
+<g stroke="#233B46" stroke-width="6">
+ <path d="M580 830h90l-10 70h-70z" fill="#2C8CC7"/><path d="M565 820h120v25H565z" fill="#3AA3DD"/>
+ <path d="M1180 800h95l-8 75h-78z" fill="#F0BE2F"/><path d="M1165 790h125v25h-125z" fill="#FFD44A"/>
+</g>
+<g stroke="#4B3B28" stroke-width="5">
+ <path d="M790 865l90-25 20 55-90 25z" fill="#C67A2A"/>
+ <path d="M1030 905c-30-20-35-55-8-75 32 12 52 32 62 62z" fill="#FFC928"/>
+ <path d="M1360 900l70-5 8 45-75 5z" fill="#EF493D"/>
+</g>
+<rect x="45" y="42" width="460" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">PARQUE URBANO</text>
+</svg>

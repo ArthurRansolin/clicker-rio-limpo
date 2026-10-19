@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#61C9F4"/><stop offset="1" stop-color="#E0FAFF"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<circle cx="1600" cy="170" r="82" fill="#FFD65C"/>
+<path d="M0 610 Q280 350 560 610 Q850 270 1140 610 Q1430 330 1920 610 V760 H0Z" fill="#4D9C54"/>
+<path d="M0 680 Q350 480 700 680 Q1050 420 1400 680 Q1660 520 1920 670 V780 H0Z" fill="#65B85C"/>
+<path d="M0 720 Q360 650 720 720 T1440 700 T1920 720 V1080 H0Z" fill="#75C84F" stroke="#173D43" stroke-width="8"/>
+
+<path d="M0 760 Q400 700 800 760 T1600 740 T1920 760 V1080 H0Z" fill="#75C84F"/>
+<path d="M0 930 Q450 820 900 920 T1920 900" fill="none" stroke="#C4A676" stroke-width="115"/>
+<g stroke="#285D30" stroke-width="7">
+ <path d="M240 830v-210" stroke="#6F482B"/><circle cx="240" cy="575" r="105" fill="#55B948"/>
+ <path d="M520 820v-180" stroke="#6F482B"/><circle cx="520" cy="600" r="90" fill="#68C653"/>
+ <path d="M1550 820v-210" stroke="#6F482B"/><circle cx="1550" cy="565" r="110" fill="#58B84A"/>
+ <path d="M1760 830v-170" stroke="#6F482B"/><circle cx="1760" cy="625" r="85" fill="#6BC956"/>
+</g>
+<g stroke="#244B31" stroke-width="6">
+ <path d="M870 790h130v120H870z" fill="#2EBA54"/><path d="M850 770h170v30H850z" fill="#45CF69"/>
+ <path d="M1070 790h130v120h-130z" fill="#2489E8"/><path d="M1050 770h170v30h-170z" fill="#46A3F3"/>
+</g>
+<g fill="#F6F0C4" stroke="#416D39" stroke-width="4">
+ <circle cx="700" cy="920" r="12"/><circle cx="730" cy="950" r="10"/><circle cx="1350" cy="900" r="12"/>
+</g>
+<rect x="45" y="42" width="460" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">FLORESTA RECUPERADA</text>
+</svg>

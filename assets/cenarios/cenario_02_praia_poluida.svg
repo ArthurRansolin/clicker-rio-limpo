@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#52C6F2"/><stop offset="1" stop-color="#CFF4FF"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<circle cx="1550" cy="180" r="90" fill="#FFD45A"/>
+<path d="M0 610 Q400 540 800 620 T1600 590 T1920 610 V790 H0Z" fill="#38AEE5"/>
+<path d="M0 700 Q350 650 720 710 T1450 690 T1920 710 V820 H0Z" fill="#72D4EF"/>
+<g fill="#F6F1D6"><path d="M0 745 Q420 700 840 750 T1680 735 T1920 745 V810 H0Z"/></g>
+<path d="M0 720 Q360 650 720 720 T1440 700 T1920 720 V1080 H0Z" fill="#E7C46C" stroke="#173D43" stroke-width="8"/>
+
+<path d="M0 790 Q420 745 840 800 T1680 785 T1920 800 V1080 H0Z" fill="#E7C46C"/>
+<g stroke="#6B4B20" stroke-width="8">
+ <path d="M250 780q15-150 110-250" fill="none"/><path d="M360 530q-90-30-130 15q80 20 130-15zm0 0q70-70 130-30q-55 45-130 30zm0 0q15-95 75-110q10 70-75 110z" fill="#58B848"/>
+</g>
+<g stroke="#394A50" stroke-width="6">
+ <path d="M650 880l100-18 12 60-100 18z" fill="#EF493D"/>
+ <path d="M900 930l85-45 30 50-85 45z" fill="#58C7F3"/>
+ <path d="M1250 870c25-20 55-20 80 0l-12 70h-60z" fill="#303945"/>
+ <circle cx="1480" cy="930" r="48" fill="#30343B"/><circle cx="1480" cy="930" r="24" fill="#88949B"/>
+</g>
+<rect x="45" y="42" width="460" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">PRAIA POLUÍDA</text>
+</svg>

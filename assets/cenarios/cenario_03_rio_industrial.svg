@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#8198A5"/><stop offset="1" stop-color="#C7D1D5"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<rect x="0" y="520" width="1920" height="240" fill="#82939B"/>
+<g stroke="#38464D" stroke-width="8">
+ <rect x="170" y="300" width="260" height="420" fill="#697982"/>
+ <rect x="480" y="390" width="310" height="330" fill="#73848D"/>
+ <rect x="1310" y="350" width="350" height="370" fill="#657780"/>
+ <path d="M230 300V180h80v120M580 390V210h90v180M1460 350V160h95v190" fill="#596970"/>
+</g>
+<g fill="#AAB5BA" opacity=".8">
+ <circle cx="270" cy="130" r="55"/><circle cx="330" cy="90" r="75"/><circle cx="625" cy="160" r="65"/>
+ <circle cx="1510" cy="115" r="80"/><circle cx="1600" cy="80" r="60"/>
+</g>
+<path d="M0 720 Q360 650 720 720 T1440 700 T1920 720 V1080 H0Z" fill="#426F67" stroke="#173D43" stroke-width="8"/>
+
+<path d="M0 760 Q350 700 720 760 T1450 740 T1920 760 V1080 H0Z" fill="#426F67"/>
+<path d="M0 850 Q400 800 800 860 T1600 840 T1920 850" fill="none" stroke="#526E58" stroke-width="150"/>
+<g stroke="#2B3438" stroke-width="6">
+ <path d="M520 850h110l-15 85h-85z" fill="#8A5738"/>
+ <path d="M850 900l95-15 12 55-95 15z" fill="#EF493D"/>
+ <path d="M1110 830l70 5-5 110-70-5z" fill="#59B92E"/>
+ <path d="M1450 900l90-40 25 55-90 40z" fill="#C77A2A"/>
+</g>
+<g fill="#A7DDE0"><ellipse cx="360" cy="930" rx="70" ry="18"/><ellipse cx="1330" cy="970" rx="90" ry="20"/></g>
+<rect x="45" y="42" width="460" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">RIO INDUSTRIAL</text>
+</svg>
