@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://wivwvralbd3p"]
 
-[ext_resource type="Script" uid="uid://bhlb2dflwsv5g" path="res://Scripts/shop.gd" id="1_a0mxf"]
+[ext_resource type="Script" uid="uid://bhlb2dflwsv5g" path="res://Scripts/shop.gd" id="1_kjfcx"]
 
 [node name="Shop" type="Node2D" unique_id=238073595]
-script = ExtResource("1_a0mxf")
+script = ExtResource("1_kjfcx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1790578921]
 offset_left = 94.0
@@ -19,15 +19,16 @@ text = "LOJA"
 layout_mode = 2
 text = "Moedas: 0"
 
-[node name="ClickUpgrade" type="Button" parent="VBoxContainer" unique_id=1113503556]
+[node name="HandsButton" type="Button" parent="VBoxContainer" unique_id=302689954]
 layout_mode = 2
-text = "ClickUpgrade"
 
-[node name="AutoClickUpgrade" type="Button" parent="VBoxContainer" unique_id=2084166029]
+[node name="BinButton" type="Button" parent="VBoxContainer" unique_id=603188968]
 layout_mode = 2
-text = "+1 Moeda/s — 50 moedas"
 
-[node name="MultiplierUpgrade" type="Button" parent="VBoxContainer" unique_id=267539033]
+[node name="TruckButton" type="Button" parent="VBoxContainer" unique_id=1419148706]
+layout_mode = 2
+
+[node name="RecyclingButton" type="Button" parent="VBoxContainer" unique_id=1062477209]
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1872382138]

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cv4rr00ejw42s" path="res://assets/lixo/pneu.svg" id="11_0sclb"]
 [ext_resource type="Texture2D" uid="uid://mpnlfnhi254j" path="res://assets/lixo/saco_lixo.svg" id="12_sxkr1"]
 
-[node name="Main" type="Control" unique_id=541274630]
+[node name="Main" type="Control" unique_id=466846177]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,5 +171,3 @@ offset_left = -285.0
 offset_top = 37.0
 offset_right = 134.0
 offset_bottom = 119.0
-
-[connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]

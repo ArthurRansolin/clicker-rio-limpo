@@ -1,5 +1,5 @@
 
-extends Control
+extends Node2D
 
 
 func _ready() -> void:
@@ -81,4 +81,4 @@ func _on_recycling_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
