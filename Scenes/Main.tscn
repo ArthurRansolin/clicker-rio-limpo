@@ -2,17 +2,6 @@
 
 [ext_resource type="Script" uid="uid://br2mkiir6mgwi" path="res://Scripts/main.gd" id="1_r150o"]
 [ext_resource type="Texture2D" uid="uid://dqqfwt4v1v845" path="res://assets/cenarios/svgviewer-output.svg" id="2_grg3l"]
-[ext_resource type="Texture2D" uid="uid://ceareiqyvhcya" path="res://assets/lixo/caixa_papelao.svg" id="3_grg3l"]
-[ext_resource type="Texture2D" uid="uid://ks5ikrd5qmur" path="res://assets/lixo/garrafa_plastica.svg" id="3_kln2b"]
-[ext_resource type="Script" uid="uid://bynedu5penr4p" path="res://Scripts/trash.gd" id="4_1p5hy"]
-[ext_resource type="Texture2D" uid="uid://ut161md5ywmn" path="res://assets/lixo/casca_banana.svg" id="4_frkhe"]
-[ext_resource type="Texture2D" uid="uid://c8susqbpowmr" path="res://assets/lixo/engrenagem.svg" id="5_1p5hy"]
-[ext_resource type="Texture2D" uid="uid://bml0jl7v260ai" path="res://assets/lixo/garrafa_vidro.svg" id="7_h1m7h"]
-[ext_resource type="Texture2D" uid="uid://fd08t8iwa7sg" path="res://assets/lixo/lata.svg" id="8_erwvk"]
-[ext_resource type="Texture2D" uid="uid://jrn0gulyb2re" path="res://assets/lixo/papel_amassado.svg" id="9_2w5on"]
-[ext_resource type="Texture2D" uid="uid://x6bdvesyvgml" path="res://assets/lixo/pedra.svg" id="10_346fj"]
-[ext_resource type="Texture2D" uid="uid://cv4rr00ejw42s" path="res://assets/lixo/pneu.svg" id="11_0sclb"]
-[ext_resource type="Texture2D" uid="uid://mpnlfnhi254j" path="res://assets/lixo/saco_lixo.svg" id="12_sxkr1"]
 
 [node name="Main" type="Control" unique_id=466846177]
 layout_mode = 3
@@ -46,117 +35,28 @@ offset_bottom = 68.0
 text = "Moedas: 0
 "
 
-[node name="CleanLabel" type="Label" parent="." unique_id=1503055697]
+[node name="CleanLabel" type="Label" parent="." unique_id=1933511715]
 layout_mode = 0
-offset_left = 169.0
-offset_top = 116.0
-offset_right = 385.0
-offset_bottom = 178.0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="ClickPowerLabel" type="Label" parent="." unique_id=2134337583]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 248.0
-offset_right = 316.0
-offset_bottom = 271.0
+offset_left = 208.0
+offset_top = 68.0
+offset_right = 353.0
+offset_bottom = 91.0
 text = "Poder por clique: 1"
 
 [node name="AutoClickTimer" type="Timer" parent="." unique_id=567343332]
 
 [node name="RiverArea" type="Control" parent="." unique_id=1648027963]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="papelao" type="TextureButton" parent="RiverArea" unique_id=1425430142]
-layout_mode = 0
-offset_left = -245.0
-offset_top = 741.0
-offset_right = -117.0
-offset_bottom = 869.0
-texture_normal = ExtResource("3_grg3l")
-script = ExtResource("4_1p5hy")
-
-[node name="banana" type="TextureButton" parent="RiverArea" unique_id=16750130]
-layout_mode = 0
-offset_left = -90.0
-offset_top = 765.0
-offset_right = 38.0
-offset_bottom = 893.0
-texture_normal = ExtResource("4_frkhe")
-script = ExtResource("4_1p5hy")
-
-[node name="engrenagem" type="TextureButton" parent="RiverArea" unique_id=512270686]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 795.0
-offset_right = 268.0
-offset_bottom = 923.0
-texture_normal = ExtResource("5_1p5hy")
-script = ExtResource("4_1p5hy")
-
-[node name="garrafa" type="TextureButton" parent="RiverArea" unique_id=1326005385]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 785.0
-offset_right = 472.0
-offset_bottom = 913.0
-texture_normal = ExtResource("3_kln2b")
-script = ExtResource("4_1p5hy")
-
-[node name="vidro" type="TextureButton" parent="RiverArea" unique_id=1223489283]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 834.0
-offset_right = 664.0
-offset_bottom = 962.0
-texture_normal = ExtResource("7_h1m7h")
-script = ExtResource("4_1p5hy")
-
-[node name="copo" type="TextureButton" parent="RiverArea" unique_id=740481950]
-layout_mode = 0
-offset_left = 720.0
-offset_top = 802.0
-offset_right = 848.0
-offset_bottom = 930.0
-texture_normal = ExtResource("8_erwvk")
-script = ExtResource("4_1p5hy")
-
-[node name="papel" type="TextureButton" parent="RiverArea" unique_id=191065773]
-layout_mode = 0
-offset_left = 939.0
-offset_top = 821.0
-offset_right = 1067.0
-offset_bottom = 949.0
-texture_normal = ExtResource("9_2w5on")
-script = ExtResource("4_1p5hy")
-
-[node name="pedra" type="TextureButton" parent="RiverArea" unique_id=640392698]
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 799.0
-offset_right = 1264.0
-offset_bottom = 927.0
-texture_normal = ExtResource("10_346fj")
-script = ExtResource("4_1p5hy")
-
-[node name="pneu" type="TextureButton" parent="RiverArea" unique_id=2011209021]
-layout_mode = 0
-offset_left = 1275.0
-offset_top = 799.0
-offset_right = 1403.0
-offset_bottom = 927.0
-texture_normal = ExtResource("11_0sclb")
-script = ExtResource("4_1p5hy")
-
-[node name="saco" type="TextureButton" parent="RiverArea" unique_id=2119838858]
-layout_mode = 0
-offset_left = 1389.0
-offset_top = 760.0
-offset_right = 1517.0
-offset_bottom = 888.0
-texture_normal = ExtResource("12_sxkr1")
-script = ExtResource("4_1p5hy")
+layout_mode = 1
+offset_left = -287.0
+offset_top = 698.0
+offset_right = 1470.0
+offset_bottom = 935.0
+localize_numeral_system = false
 
 [node name="ShopButton" type="Button" parent="." unique_id=2112697496]
 layout_mode = 0
@@ -167,7 +67,22 @@ offset_bottom = 671.0
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1665816048]
 layout_mode = 0
-offset_left = -285.0
-offset_top = 37.0
-offset_right = 134.0
-offset_bottom = 119.0
+offset_left = -287.0
+offset_top = 42.0
+offset_right = 132.0
+offset_bottom = 124.0
+
+[node name="LevelLabel" type="Label" parent="." unique_id=767333786]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 19.0
+offset_right = 438.0
+offset_bottom = 42.0
+text = "Fase: 1"
+
+[node name="Label" type="Label" parent="." unique_id=1445613305]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 23.0
+offset_right = 356.0
+offset_bottom = 46.0

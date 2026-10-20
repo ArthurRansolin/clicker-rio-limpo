@@ -3,6 +3,11 @@ extends Node
 
 signal game_updated
 
+# Sistema de fases
+var current_level: int = 1
+var phase_trash_total: int = 0
+var phase_trash_collected: int = 0
+
 # Recursos do jogador
 var coins: int = 0
 var multiplier: float = 1.0
@@ -52,13 +57,16 @@ func get_collection_value(base_value: int) -> int:
 
 
 func get_clean_percentage() -> float:
-	if total_trash <= 0:
+	if phase_trash_total <= 0:
 		return 0.0
 
 	return minf(
-		float(collected_trash_ids.size()) / float(total_trash) * 100.0,
+		float(phase_trash_collected)
+		/ float(phase_trash_total) * 100.0,
 		100.0
 	)
+
+
 
 
 func collect_trash(trash_id: String, base_value: int) -> void:
@@ -67,6 +75,7 @@ func collect_trash(trash_id: String, base_value: int) -> void:
 
 	coins += get_collection_value(base_value)
 	collected_trash_ids.append(trash_id)
+	phase_trash_collected += 1
 
 	game_updated.emit()
 
@@ -118,3 +127,18 @@ func buy_recycling() -> bool:
 
 	game_updated.emit()
 	return true
+
+func get_trash_count_for_level(level: int) -> int:
+	var extra_difficulty: int = floori(
+		float(level - 1) / 10.0
+	) * 10
+
+	return 8 + ((level - 1) * 2) + extra_difficulty
+
+
+func advance_level() -> void:
+	current_level += 1
+	phase_trash_collected = 0
+	phase_trash_total = get_trash_count_for_level(current_level)
+
+	game_updated.emit()

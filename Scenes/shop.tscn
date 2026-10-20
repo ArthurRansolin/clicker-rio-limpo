@@ -33,3 +33,4 @@ layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1872382138]
 layout_mode = 2
+text = "VOLTAR"
