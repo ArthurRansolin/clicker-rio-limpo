@@ -9,7 +9,7 @@ script = ExtResource("1_kjfcx")
 offset_left = 94.0
 offset_top = 71.0
 offset_right = 519.0
-offset_bottom = 366.0
+offset_bottom = 550.0
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=799613006]
 layout_mode = 2
@@ -29,6 +29,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="RecyclingButton" type="Button" parent="VBoxContainer" unique_id=1062477209]
+layout_mode = 2
+
+[node name="ClickStrengthButton" type="Button" parent="VBoxContainer" unique_id=1347115276]
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1872382138]

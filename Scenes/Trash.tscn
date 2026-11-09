@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cly31yjlgqr1g"]
 
 [ext_resource type="Texture2D" uid="uid://ceareiqyvhcya" path="res://assets/lixo/caixa_papelao.svg" id="1_nkago"]
-[ext_resource type="Script" uid="uid://bynedu5penr4p" path="res://Scripts/trash.gd" id="2_1fkk3"]
 
 [node name="papelao" type="TextureButton" unique_id=806312852]
 offset_left = -245.0
@@ -9,4 +8,3 @@ offset_top = 741.0
 offset_right = -117.0
 offset_bottom = 869.0
 texture_normal = ExtResource("1_nkago")
-script = ExtResource("2_1fkk3")
