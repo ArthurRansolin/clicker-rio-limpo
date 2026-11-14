@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Clicker"
-run/main_scene="uid://bhtcj5wwx6j7c"
+run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

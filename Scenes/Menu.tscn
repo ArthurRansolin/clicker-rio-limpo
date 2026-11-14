@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bi78rvu2ekh8i"]
+
+[ext_resource type="Script" uid="uid://6g4hr7wybtua" path="res://Scripts/menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://dnkxl41tyq3vo" path="res://assets/cenarios/cenario_01_rio_urbano.svg" id="2_rio"]
+
+[node name="Menu" type="Control" unique_id=1238613969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1647057007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rio")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Tint" type="ColorRect" parent="." unique_id=1750497806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.12, 0.13, 0.58)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1866771618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuPanel" type="PanelContainer" parent="CenterContainer" unique_id=419239019]
+custom_minimum_size = Vector2(560, 500)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/MenuPanel" unique_id=1197712561]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="CenterContainer/MenuPanel/Content" unique_id=1773027371]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.31, 0.28, 1)
+theme_override_font_sizes/font_size = 42
+text = "RIO LIMPO"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MenuPanel/Content" unique_id=636240332]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.37, 0.32, 1)
+theme_override_font_sizes/font_size = 19
+text = "Ajude a limpar o rio!"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="CenterContainer/MenuPanel/Content" unique_id=419766710]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "JOGAR"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/MenuPanel/Content" unique_id=2083288774]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "CRÉDITOS"
+
+[node name="RulesButton" type="Button" parent="CenterContainer/MenuPanel/Content" unique_id=1923941637]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "REGRAS"
+
+[node name="InfoLabel" type="Label" parent="CenterContainer/MenuPanel/Content" unique_id=1321972805]
+visible = false
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.2, 0.17, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BackButton" type="Button" parent="CenterContainer/MenuPanel/Content" unique_id=1217972092]
+visible = false
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "VOLTAR"

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#52C6F2"/><stop offset="1" stop-color="#CFF4FF"/>
+  </linearGradient>
+  <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#54C5E8"/><stop offset=".35" stop-color="#168FC4"/><stop offset="1" stop-color="#07517F"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+<circle cx="1550" cy="180" r="90" fill="#FFD45A"/>
+
+<!-- Oceano ocupa quase toda a metade inferior -->
+<path d="M0 500 Q400 470 800 505 T1600 490 T1920 500 V1080 H0Z" fill="url(#ocean)"/>
+
+<!-- Faixas de ondas no mar -->
+<path d="M0 565 Q220 535 440 565 T880 565 T1320 560 T1760 560 T1920 555"
+ fill="none" stroke="#B8F0F5" stroke-width="14" opacity=".85"/>
+<path d="M-30 650 Q250 620 500 650 T1000 650 T1500 645 T1950 640"
+ fill="none" stroke="#83DDEB" stroke-width="10" opacity=".8"/>
+<path d="M100 760 Q340 730 570 760 T1030 760 T1490 750 T1900 755"
+ fill="none" stroke="#6BC8E0" stroke-width="9" opacity=".7"/>
+<path d="M-20 870 Q240 840 480 870 T960 870 T1440 860 T1920 865"
+ fill="none" stroke="#5AB8D6" stroke-width="8" opacity=".65"/>
+
+<!-- Espuma de ondas próximas à costa -->
+<path d="M0 890 Q240 850 480 890 T960 890 T1440 880 T1920 885"
+ fill="none" stroke="#E4FAF5" stroke-width="24" opacity=".9"/>
+<path d="M0 925 Q260 895 520 925 T1040 925 T1560 915 T1920 920"
+ fill="none" stroke="#B8EDEB" stroke-width="12" opacity=".9"/>
+
+<!-- Faixa estreita de areia na parte inferior -->
+<path d="M0 945 Q360 920 720 950 T1440 940 T1920 945 V1080 H0Z"
+ fill="#E7C46C" stroke="#173D43" stroke-width="7"/>
+<path d="M0 985 Q400 965 800 990 T1600 980 T1920 985"
+ fill="none" stroke="#F6E2A0" stroke-width="10" opacity=".8"/>
+
+<!-- Palmeiras discretas nas extremidades, sem dominar a paisagem -->
+<g stroke="#6B4B20" stroke-width="8">
+ <path d="M150 955q15-115 75-180" fill="none"/>
+ <path d="M225 775q-75-25-110 12q65 18 110-12zm0 0q58-58 108-25q-45 38-108 25zm0 0q12-75 62-88q8 55-62 88z" fill="#58B848"/>
+ <path d="M1690 950q15-115 75-180" fill="none"/>
+ <path d="M1765 770q-75-25-110 12q65 18 110-12zm0 0q58-58 108-25q-45 38-108 25zm0 0q12-75 62-88q8 55-62 88z" fill="#58B848"/>
+</g>
+
+<!-- Pequenos detalhes de correnteza -->
+<g fill="none" stroke="#D7F8F4" stroke-width="6" stroke-linecap="round" opacity=".75">
+ <path d="M300 700 q70 -20 140 0"/>
+ <path d="M1050 600 q80 -18 160 0"/>
+ <path d="M1430 810 q65 -18 130 0"/>
+</g>
+
+<rect x="45" y="42" width="500" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">OCEANO POLUÍDO</text>
+</svg>

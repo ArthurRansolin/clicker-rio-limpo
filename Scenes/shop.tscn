@@ -1,39 +1,76 @@
-[gd_scene format=3 uid="uid://wivwvralbd3p"]
+[gd_scene format=3 uid="uid://cn4s1g4ny3322"]
 
 [ext_resource type="Script" uid="uid://bhlb2dflwsv5g" path="res://Scripts/shop.gd" id="1_kjfcx"]
 
-[node name="Shop" type="Node2D" unique_id=238073595]
+[node name="Shop" type="Control" unique_id=238073595]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_kjfcx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1790578921]
-offset_left = 94.0
-offset_top = 71.0
-offset_right = 519.0
-offset_bottom = 550.0
+[node name="Backdrop" type="ColorRect" parent="." unique_id=775173232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.035, 0.12, 0.15, 0.82)
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=799613006]
-layout_mode = 2
-text = "LOJA"
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1790578921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CoinLabel" type="Label" parent="VBoxContainer" unique_id=954095281]
+[node name="ShopPanel" type="PanelContainer" parent="CenterContainer" unique_id=799613006]
+custom_minimum_size = Vector2(650, 700)
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/ShopPanel" unique_id=954095281]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=302689954]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.08, 0.32, 0.29, 1)
+theme_override_font_sizes/font_size = 36
+text = "LOJA DE MELHORIAS"
+horizontal_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=603188968]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27, 0.36, 0.27, 1)
+theme_override_font_sizes/font_size = 20
 text = "Moedas: 0"
+horizontal_alignment = 1
 
-[node name="HandsButton" type="Button" parent="VBoxContainer" unique_id=302689954]
+[node name="HandsButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=1419148706]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 
-[node name="BinButton" type="Button" parent="VBoxContainer" unique_id=603188968]
+[node name="BinButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=1062477209]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 
-[node name="TruckButton" type="Button" parent="VBoxContainer" unique_id=1419148706]
+[node name="TruckButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=1347115276]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 
-[node name="RecyclingButton" type="Button" parent="VBoxContainer" unique_id=1062477209]
+[node name="RecyclingButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=1872382138]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 
-[node name="ClickStrengthButton" type="Button" parent="VBoxContainer" unique_id=1347115276]
+[node name="ClickStrengthButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=888888881]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1872382138]
+[node name="BackButton" type="Button" parent="CenterContainer/ShopPanel/VBoxContainer" unique_id=888888882]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
-text = "VOLTAR"
+text = "VOLTAR AO RIO"

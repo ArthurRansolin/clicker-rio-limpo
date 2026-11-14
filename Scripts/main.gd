@@ -15,10 +15,10 @@ const TRASH_TEXTURES: Array[Texture2D] = [
 	preload("res://assets/lixo/saco_lixo.svg"),
 ]
 const SCENARIO_TEXTURES: Array[Texture2D] = [
-	preload("res://assets/cenarios/cenario_01_parque_urbano.svg"),
-	preload("res://assets/cenarios/cenario_02_praia_poluida.svg"),
-	preload("res://assets/cenarios/cenario_03_rio_industrial.svg"),
-	preload("res://assets/cenarios/cenario_04_floresta_recuperada.svg"),
+	preload("res://assets/cenarios/cenario_01_rio_urbano.svg"),
+	preload("res://assets/cenarios/cenario_02_oceano_poluido.svg"),
+	preload("res://assets/cenarios/cenario_03_rio_florestal.svg"),
+	preload("res://assets/cenarios/svgviewer-output.svg"),
 ]
 
 var advance_pending: bool = false
@@ -28,6 +28,7 @@ var low_time_animation_active: bool = false
 var low_time_tween: Tween
 var final_game_over: bool = false
 var truck_action_timer: float = 0.0
+var last_timer_text: String = ""
 
 
 func _process(delta: float) -> void:
@@ -70,6 +71,11 @@ func _ready() -> void:
 
 	if not $ShopButton.pressed.is_connected(_on_shop_button_pressed):
 		$ShopButton.pressed.connect(_on_shop_button_pressed)
+	_style_shop_button($ShopButton)
+	_style_coin_panel()
+	_style_game_over_buttons()
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/RestartButton.pressed.connect(_on_restart_pressed)
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/MenuButton.pressed.connect(_on_menu_pressed)
 	if not $RiverArea.gui_input.is_connected(_on_river_gui_input):
 		$RiverArea.gui_input.connect(_on_river_gui_input)
 	if not $Backgound.gui_input.is_connected(_on_river_gui_input):
@@ -294,7 +300,7 @@ func _show_final_score() -> void:
 func _restart_level_after_timeout() -> void:
 	missed_click_feedback_time = 0.0
 	$TimerLabel.modulate = Color.WHITE
-	$TimerLabel.text = "Tempo esgotado! Fase reiniciando..."
+	$TimerLabel.text = "Tempo esgotado! Seu progresso foi mantido."
 	await get_tree().create_timer(1.2).timeout
 	GameManager.restart_current_level()
 	await spawn_remaining_trash()
@@ -399,19 +405,24 @@ func _update_scenario_background() -> void:
 
 func update_timer_ui() -> void:
 	var seconds_left: int = ceili(GameManager.phase_time_remaining)
+	var display_text: String
 
 	if missed_click_feedback_time > 0.0:
 		var penalty_text: String = "%.1f" % float(
 			$TimerLabel.get_meta("last_missed_click_penalty", 3.0)
 		)
-		$TimerLabel.text = (
+		display_text = (
 			"[color=#ff3333]Tempo: %d s (-%s s)[/color]"
 			% [seconds_left, penalty_text]
 		)
 	elif GameManager.phase_time_remaining < 5.0:
-		$TimerLabel.text = "Tempo: [color=#ff3333]%d s[/color]" % seconds_left
+		display_text = "Tempo: [color=#ff3333]%d s[/color]" % seconds_left
 	else:
-		$TimerLabel.text = "Tempo: %d s" % seconds_left
+		display_text = "Tempo: %d s" % seconds_left
+
+	if display_text != last_timer_text:
+		$TimerLabel.text = display_text
+		last_timer_text = display_text
 
 
 func _process_truck_auto_click(delta: float) -> void:
@@ -461,4 +472,57 @@ func _update_low_time_animation() -> void:
 
 
 func _on_shop_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
+	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
+
+
+func _style_shop_button(button: Button) -> void:
+	var normal := StyleBoxFlat.new()
+	normal.bg_color = Color(0.08, 0.32, 0.29, 0.96)
+	normal.set_corner_radius_all(14)
+	normal.set_border_width_all(3)
+	normal.border_color = Color(0.72, 0.83, 0.55, 1.0)
+	normal.shadow_color = Color(0.02, 0.08, 0.07, 0.5)
+	normal.shadow_size = 5
+	normal.content_margin_left = 16
+	normal.content_margin_right = 16
+	var hover := normal.duplicate() as StyleBoxFlat
+	hover.bg_color = Color(0.13, 0.48, 0.39, 1.0)
+	var pressed := normal.duplicate() as StyleBoxFlat
+	pressed.bg_color = Color(0.05, 0.23, 0.21, 1.0)
+	button.add_theme_stylebox_override("normal", normal)
+	button.add_theme_stylebox_override("hover", hover)
+	button.add_theme_stylebox_override("pressed", pressed)
+	button.add_theme_color_override("font_color", Color(0.96, 0.98, 0.88, 1.0))
+	button.add_theme_color_override("font_hover_color", Color.WHITE)
+	button.add_theme_color_override("font_pressed_color", Color.WHITE)
+	button.add_theme_font_size_override("font_size", 22)
+
+
+func _style_coin_panel() -> void:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.03, 0.16, 0.14, 0.92)
+	style.set_corner_radius_all(14)
+	style.set_border_width_all(3)
+	style.border_color = Color(0.82, 0.69, 0.32, 1.0)
+	$CoinPanel.add_theme_stylebox_override("panel", style)
+
+
+func _style_game_over_buttons() -> void:
+	for button_name in ["RestartButton", "MenuButton"]:
+		var button: Button = get_node(
+			"GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/" + button_name
+		)
+		var style := StyleBoxFlat.new()
+		style.bg_color = Color(0.12, 0.42, 0.35, 1.0)
+		style.set_corner_radius_all(10)
+		button.add_theme_stylebox_override("normal", style)
+		button.add_theme_color_override("font_color", Color.WHITE)
+
+
+func _on_restart_pressed() -> void:
+	GameManager.start_new_game()
+	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")

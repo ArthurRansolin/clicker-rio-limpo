@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#61C9F4"/><stop offset="1" stop-color="#E0FAFF"/>
+  </linearGradient>
+  <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#72C9C7"/><stop offset=".5" stop-color="#3599A7"/><stop offset="1" stop-color="#24758D"/>
+  </linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+<circle cx="1600" cy="170" r="82" fill="#FFD65C"/>
+
+<!-- Colinas e floresta ao fundo -->
+<path d="M0 610 Q280 350 560 610 Q850 270 1140 610 Q1430 330 1920 610 V760 H0Z" fill="#4D9C54"/>
+<path d="M0 680 Q350 480 700 680 Q1050 420 1400 680 Q1660 520 1920 670 V780 H0Z" fill="#65B85C"/>
+
+<!-- Terreno verde nas margens -->
+<path d="M0 720 Q360 650 720 720 T1440 700 T1920 720 V1080 H0Z" fill="#75C84F"/>
+<path d="M0 790 Q300 730 570 790 Q850 850 1100 790 Q1450 700 1920 790 V1080 H0Z" fill="#64B94B"/>
+
+<!-- Rio sinuoso atravessando a floresta -->
+<path d="M-100 880
+ Q120 820 300 850
+ Q520 890 650 820
+ Q800 735 990 790
+ Q1190 850 1320 900
+ Q1510 980 1690 900
+ Q1830 840 2020 875
+ L2020 1080 L-100 1080Z"
+ fill="url(#river)" stroke="#285F48" stroke-width="12"/>
+
+<!-- Margens claras e vegetação ribeirinha -->
+<path d="M-50 860 Q130 800 300 830 Q520 870 650 800 Q800 715 990 770 Q1190 830 1320 880 Q1510 960 1690 880 Q1830 820 1980 855"
+ fill="none" stroke="#B5D77A" stroke-width="28"/>
+<path d="M-50 900 Q130 840 300 870 Q520 910 650 840 Q800 755 990 810 Q1190 870 1320 920 Q1510 1000 1690 920 Q1830 860 1980 895"
+ fill="none" stroke="#1E7180" stroke-width="10" opacity=".75"/>
+
+<!-- Reflexos e correnteza -->
+<g fill="none" stroke-linecap="round">
+ <path d="M40 880 Q190 840 330 875" stroke="#C1F0E4" stroke-width="11" opacity=".85"/>
+ <path d="M680 830 Q820 770 950 800" stroke="#A8E8DF" stroke-width="10" opacity=".8"/>
+ <path d="M1120 850 Q1260 885 1370 920" stroke="#BDEFE6" stroke-width="10" opacity=".8"/>
+ <path d="M1500 940 Q1660 980 1810 915" stroke="#9DDFDA" stroke-width="10" opacity=".8"/>
+</g>
+<g fill="none" stroke="#E0F8E9" stroke-width="7" stroke-linecap="round" opacity=".85">
+ <path d="M380 875 l48 -8 l-17 -12 m17 12 l-18 13"/>
+ <path d="M1020 820 l48 -8 l-17 -12 m17 12 l-18 13"/>
+ <path d="M1590 945 l48 -8 l-17 -12 m17 12 l-18 13"/>
+</g>
+
+<!-- Árvores nas margens -->
+<g stroke="#285D30" stroke-width="7">
+ <path d="M240 830v-210" stroke="#6F482B"/><circle cx="240" cy="575" r="105" fill="#55B948"/>
+ <path d="M520 820v-180" stroke="#6F482B"/><circle cx="520" cy="600" r="90" fill="#68C653"/>
+ <path d="M1550 820v-210" stroke="#6F482B"/><circle cx="1550" cy="565" r="110" fill="#58B84A"/>
+ <path d="M1760 830v-170" stroke="#6F482B"/><circle cx="1760" cy="625" r="85" fill="#6BC956"/>
+</g>
+<rect x="45" y="42" width="460" height="92" rx="28" fill="#173D43" opacity=".9"/>
+<text x="82" y="102" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">RIO FLORESTAL</text>
+</svg>

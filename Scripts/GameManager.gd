@@ -4,6 +4,7 @@ extends Node
 signal game_updated
 
 const FINAL_LEVEL: int = 10
+const MAX_CLICK_STRENGTH_LEVEL: int = 10
 
 # Sistema de fases
 var current_level: int = 1
@@ -159,7 +160,10 @@ func buy_recycling() -> bool:
 
 
 func buy_click_strength() -> bool:
-	if coins < click_strength_cost:
+	if (
+		coins < click_strength_cost
+		or click_strength_level >= MAX_CLICK_STRENGTH_LEVEL
+	):
 		return false
 
 	coins -= click_strength_cost
@@ -173,11 +177,7 @@ func get_click_strength() -> int:
 	return 1 + click_strength_level
 
 func get_trash_count_for_level(level: int) -> int:
-	var extra_difficulty: int = floori(
-		float(level - 1) / 10.0
-	) * 10
-
-	var base_count: int = 8 + ((level - 1) * 2) + extra_difficulty
+	var base_count: int = 8 + ((level - 1) * 2)
 	return maxi(6, base_count - mini(bin_level, 5))
 
 
@@ -200,14 +200,33 @@ func get_time_limit_for_level(level: int) -> float:
 
 
 func restart_current_level() -> void:
-	var level_prefix: String = "Fase_%d_Lixo_" % current_level
-	var remaining_ids: Array[String] = []
-
-	for trash_id in collected_trash_ids:
-		if not trash_id.begins_with(level_prefix):
-			remaining_ids.append(trash_id)
-
-	collected_trash_ids = remaining_ids
-	phase_trash_collected = 0
+	# Mantém o progresso da fase para evitar que os mesmos resíduos
+	# possam ser coletados repetidamente para ganhar moedas.
 	phase_time_remaining = get_time_limit_for_level(current_level)
+	game_updated.emit()
+
+
+func start_new_game() -> void:
+	current_level = 1
+	phase_trash_collected = 0
+	coins = 0
+	multiplier = 1.0
+	missed_clicks_total = 0
+	hands_level = 0
+	bin_level = 0
+	truck_level = 0
+	recycling_level = 0
+	click_strength_level = 0
+	hands_cost = 50
+	bin_cost = 150
+	truck_cost = 300
+	recycling_cost = 500
+	click_strength_cost = 200
+	hands_bonus = 1
+	bin_bonus = 5
+	truck_income = 5
+	collected_trash_ids.clear()
+	production_timer = 0.0
+	phase_trash_total = get_trash_count_for_level(1)
+	phase_time_remaining = get_time_limit_for_level(1)
 	game_updated.emit()

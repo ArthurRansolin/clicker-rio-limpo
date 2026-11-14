@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v26ogyqy3vsd"
-path="res://.godot/imported/cenario_01_parque_urbano.svg-7efa6317d427d72634c8abde504f7964.ctex"
+uid="uid://tqitr0ggsvg5"
+path="res://.godot/imported/cenario_02_oceano_poluido.svg-cf8b5277194be0291d6a2d3a4b88bf6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/cenario_01_parque_urbano.svg"
-dest_files=["res://.godot/imported/cenario_01_parque_urbano.svg-7efa6317d427d72634c8abde504f7964.ctex"]
+source_file="res://assets/cenarios/cenario_02_oceano_poluido.svg"
+dest_files=["res://.godot/imported/cenario_02_oceano_poluido.svg-cf8b5277194be0291d6a2d3a4b88bf6f.ctex"]
 
 [params]
 
