@@ -187,7 +187,11 @@ func spawn_remaining_trash() -> void:
 			_on_trash_pressed.bind(trash)
 		)
 		if GameManager.current_level >= 8:
-			_move_trash_right(trash, margin, max_x)
+			_move_trash_right(
+				trash,
+				-trash.size.x - margin,
+				area_size.x + margin
+			)
 
 
 func _on_trash_pressed(trash: TextureButton) -> void:
@@ -280,7 +284,23 @@ func _show_final_score() -> void:
 
 	final_game_over = true
 	timeout_pending = true
+	var won: bool = (
+		GameManager.phase_trash_total > 0
+		and GameManager.phase_trash_collected >= GameManager.phase_trash_total
+	)
 	var total_collected: int = GameManager.collected_trash_ids.size()
+	var title_label: Label = $GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/TitleLabel
+	var result_label: Label = $GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/ResultLabel
+	if won:
+		title_label.text = "VOCÊ VENCEU!"
+		title_label.add_theme_color_override("font_color", Color(0.08, 0.42, 0.3, 1.0))
+		result_label.text = "Você limpou todos os resíduos e salvou o rio!"
+		result_label.add_theme_color_override("font_color", Color(0.08, 0.42, 0.3, 1.0))
+	else:
+		title_label.text = "FIM DE JOGO"
+		title_label.add_theme_color_override("font_color", Color(0.65, 0.22, 0.16, 1.0))
+		result_label.text = "O tempo acabou na última fase. Tente novamente!"
+		result_label.add_theme_color_override("font_color", Color(0.65, 0.22, 0.16, 1.0))
 	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/ScoreLabel.text = (
 		"Pontuação final: %d resíduos coletados" % total_collected
 	)
@@ -294,6 +314,10 @@ func _show_final_score() -> void:
 	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/ErrorsLabel.text = (
 		"Cliques errados: %d" % GameManager.missed_clicks_total
 	)
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/RestartButton.show()
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/RestartButton.disabled = false
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/MenuButton.show()
+	$GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/MenuButton.disabled = false
 	$GameOverLayer.visible = true
 
 
@@ -309,9 +333,14 @@ func _restart_level_after_timeout() -> void:
 
 
 func _move_trash_right(trash: TextureButton, left_x: float, right_x: float) -> void:
+	# Os resíduos atravessam o rio e reaparecem fora da borda esquerda.
+	# O início distribuído pela fase mantém intervalos entre eles.
+	var pixels_per_second: float = 100.0 + float(GameManager.current_level - 1) * 12.0
 	while is_instance_valid(trash):
-		var duration: float = randf_range(5.0, 9.0)
+		var distance: float = right_x - trash.position.x
+		var duration: float = distance / pixels_per_second
 		var tween: Tween = create_tween()
+		tween.set_trans(Tween.TRANS_LINEAR)
 		tween.tween_property(trash, "position:x", right_x, duration)
 		await tween.finished
 		if not is_instance_valid(trash):
@@ -513,10 +542,18 @@ func _style_game_over_buttons() -> void:
 			"GameOverLayer/CenterContainer/FinalScorePanel/VBoxContainer/" + button_name
 		)
 		var style := StyleBoxFlat.new()
-		style.bg_color = Color(0.12, 0.42, 0.35, 1.0)
+		style.bg_color = (
+			Color(0.08, 0.38, 0.32, 1.0)
+			if button_name == "RestartButton"
+			else Color(0.25, 0.4, 0.36, 1.0)
+		)
 		style.set_corner_radius_all(10)
 		button.add_theme_stylebox_override("normal", style)
+		var hover := style.duplicate() as StyleBoxFlat
+		hover.bg_color = Color(0.14, 0.52, 0.42, 1.0)
+		button.add_theme_stylebox_override("hover", hover)
 		button.add_theme_color_override("font_color", Color.WHITE)
+		button.add_theme_font_size_override("font_size", 20)
 
 
 func _on_restart_pressed() -> void:
